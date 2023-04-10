@@ -6,6 +6,8 @@ export { default as Employees } from "./Employees";
 export { default as Kanban } from "./Kanban";
 export { default as Orders } from "./Orders";
 export { default as Customers } from "./Customers";
+export { default as Troubleshooting } from "./Troubleshooting";
+export { default as ReactTable } from "./ReactTable";
 
 export { default as Area } from "./Charts/Area";
 export { default as Bar } from "./Charts/Bar";
