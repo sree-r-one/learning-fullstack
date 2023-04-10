@@ -1,5 +1,7 @@
 import React from "react";
+import { HiWrenchScrewdriver } from "react-icons/hi2";
 import {
+  AiOutlineTable,
   AiOutlineCalendar,
   AiOutlineShoppingCart,
   AiOutlineAreaChart,
@@ -517,6 +519,10 @@ export const links = [
         name: "ecommerce",
         icon: <FiShoppingBag />,
       },
+      {
+        name: "react-Table",
+        icon: <AiOutlineTable />,
+      },
     ],
   },
 
@@ -545,8 +551,8 @@ export const links = [
         icon: <AiOutlineCalendar />,
       },
       {
-        name: "kanban",
-        icon: <BsKanban />,
+        name: "troubleshooting",
+        icon: <HiWrenchScrewdriver />,
       },
       {
         name: "editor",

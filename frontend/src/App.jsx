@@ -6,6 +6,7 @@ import "./App.css";
 import { useState } from "react";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import {
+  ReactTable,
   Line,
   Ecommerce,
   Orders,
@@ -15,6 +16,7 @@ import {
   Pyramid,
   Customers,
   Kanban,
+  Troubleshooting,
   Area,
   Bar,
   Pie,
@@ -67,16 +69,18 @@ const App = () => {
               activeMenu ? "min-h-screen md:ml-64" : "flex-2"
             }`}
           >
-            <div className="bg-main-bg dark:bg-main-dark-bg navbar fixed w-full md:static">
+            {/* <div className="bg-main-bg dark:bg-main-dark-bg navbar fixed w-full md:static"> */}
+            <div className="bg-main-bg dark:bg-main-dark-bg navbar fixed w-full">
               <Navbar />
             </div>
 
             {/* Routes */}
-            <div className="">
+            <div className="mt-12">
               <Routes>
                 {/* Dashboard */}
                 <Route path="/" element={<Ecommerce />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
+                <Route path="/react-table" element={<ReactTable />} />
 
                 {/* Pages */}
                 <Route path="/orders" element={<Orders />} />
@@ -84,7 +88,7 @@ const App = () => {
                 <Route path="/customers" element={<Customers />} />
 
                 {/* Apps */}
-                <Route path="/kanban" element={<Kanban />} />
+                <Route path="/troubleshooting" element={<Troubleshooting />} />
                 <Route path="/editor" element={<Editor />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
