@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import "./App.css";
 import { useState } from "react";
-import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import { Navbar, Footer, Sidebar, ThemeSettings, Tooltip } from "./components";
 import {
   ReactTable,
   Line,
@@ -36,12 +36,14 @@ const App = () => {
         <div className="dark:main-dark-bg relative flex">
           {/* Settings Gear */}
           <div className="fixed bottom-4 right-4 z-50">
-            <div
-              className="transform rounded-full  p-2 text-3xl drop-shadow-sm transition duration-300 ease-in-out hover:rotate-45 hover:text-blue-800 hover:drop-shadow-md hover:delay-200"
-              style={{ background: "white" }}
-            >
-              <FiSettings />
-            </div>
+            <Tooltip message={"Settings"}>
+              <div
+                className="transform rounded-full  p-2 text-3xl drop-shadow-sm transition duration-300 ease-in-out hover:rotate-45 hover:text-blue-800 hover:drop-shadow-md hover:delay-200"
+                style={{ background: "white" }}
+              >
+                <FiSettings />
+              </div>
+            </Tooltip>
           </div>
           {/* Sidebar */}
           <div
@@ -52,17 +54,6 @@ const App = () => {
             <Sidebar />
           </div>
 
-          {/* 
-            {activeMenu ? (
-            <div className="dark:bg-secondary-dark-bg fixed w-64 bg-white transition-all duration-300 ease-in-out">
-              <Sidebar />
-            </div>
-          ) : (
-            <div className="dark:bg-secondary-dark-bg w-0 transition-all duration-300 ease-in-out">
-              <Sidebar />
-            </div>
-          )}
-          */}
           {/* NavBar */}
           <div
             className={`dark:bg-main-bg bg-main-bg w-full transition-all duration-100 ease-in-out ${

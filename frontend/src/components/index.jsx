@@ -9,6 +9,8 @@ export { default as Navbar } from "./Navbar";
 export { default as Notification } from "./Notification";
 export { default as ThemeSettings } from "./ThemeSettings";
 export { default as UserProfile } from "./UserProfile";
+export { default as Modal } from "./Modal";
+export { default as Tooltip } from "./Tooltip";
 
 export { default as Area } from "./Charts/Area";
 export { default as Line } from "./Charts/Line";
