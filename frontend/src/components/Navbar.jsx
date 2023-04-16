@@ -10,23 +10,33 @@ import { useStateContext } from "../contexts/ContextProvider";
 import { Link, NavLink } from "react-router-dom";
 import { SiShopware } from "react-icons/si";
 import { MdOutlineCancel } from "react-icons/md";
+import { Tooltip } from ".";
 
 // const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
-const NavButton = ({ title, customFunc, color, icon, notificationColor }) => (
-  <button
-    type="button"
-    onClick={customFunc}
-    style={{ color }}
-    className="hover:bg-gray-light relative rounded-full p-3 text-xl"
-  >
-    <span
-      style={{ background: notificationColor }}
-      className={`absolute right-2 top-2 h-2 w-2 rounded-full ${
-        notificationColor && "ring-2 ring-white drop-shadow-lg"
-      }`}
-    />
-    {icon}
-  </button>
+const NavButton = ({
+  title,
+  customFunc,
+  color,
+  icon,
+  notificationColor,
+  tooltip,
+}) => (
+  <Tooltip message={tooltip}>
+    <button
+      type="button"
+      onClick={customFunc}
+      style={{ color }}
+      className="hover:bg-gray-light relative rounded-full p-3 text-xl"
+    >
+      <span
+        style={{ background: notificationColor }}
+        className={`absolute right-2 top-2 h-2 w-2 rounded-full ${
+          notificationColor && "ring-2 ring-white drop-shadow-lg"
+        }`}
+      />
+      {icon}
+    </button>
+  </Tooltip>
 );
 
 const Navbar = () => {
@@ -81,6 +91,7 @@ const Navbar = () => {
     <div className="sidebar relative z-10 flex justify-between bg-green-100  ">
       <div className="flex">
         <NavButton
+          tooltip={"Toggle Menu"}
           title={"Testing"}
           color="black"
           icon={<AiOutlineMenu />}
@@ -99,12 +110,14 @@ const Navbar = () => {
       {/* Menu on the right side of the Navbar */}
       <div className="flex">
         <NavButton
+          tooltip={"Cart"}
           title={"Cart"}
           color="black"
           icon={<FiShoppingCart />}
           customFunc={() => handleClick("cart")}
         />
         <NavButton
+          tooltip={"Chat"}
           title={"Chat"}
           notificationColor="red"
           color="black"
@@ -112,6 +125,7 @@ const Navbar = () => {
           customFunc={() => handleClick("chat")}
         />
         <NavButton
+          tooltip={"Notifications"}
           title={"Notifications"}
           notificationColor="orange"
           color="black"
